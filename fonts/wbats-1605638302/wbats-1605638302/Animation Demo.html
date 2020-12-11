@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://whirly-animate.glitch.me/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="format-detection" content="telephone=no">
+<link href="./Whirlybats Animation Demo_files/style.css" rel="stylesheet" type="text/css">
+<title>Whirlybats</title>
+<script src="./Whirlybats Animation Demo_files/jquery-latest.js">
+  </script>
+</head>
+<body>
+<div class="letters">
+<p class="editable" id="whirlybat" contenteditable="true" spellcheck="false">C
+</p>
+</div>
+<pre>@keyframes whirlyAnimate {
+  0%   { font-variation-settings: "anim" 100; }
+  100% { font-variation-settings: "anim" 200; }
+}
+
+#whirlybat {
+  animation: whirlyAnimate 1s linear infinite;
+}
+</pre>
+  <style>
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --red: #e5332a;
+    --blue: #4f9bc4;
+    --sun: #fec031;
+    --forest: #464d33;
+    --green: #457544;
+    --medgreen: #47c981;
+    --lightgreen: #ccd9d1;
+    --orange: #ff8729;
+    --wood: #663d16;
+    --navy: #112b5a;
+    --lightnavy: #274a8c;
+    --offwhite: #fbefe0;
+    --lightgrey: #d5d4d4;
+    --radius: 0;
+    --margin: 80px;
+    --rowGap: 0;
+    --colGap: 16px;
+    --padding: 50px;
+}
+
+@font-face {
+  font-family: 'Whirlybats';
+  src: url('https://cdn.glitch.com/230aa42e-94e6-443c-96f9-1f7a1c45087b%2FWhirlybatsGX.ttf?v=1599238247333')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Whirly Birdie';
+  src: url('https://cdn.glitch.com/1711052e-ea5e-4036-9c61-dd3ef6782855%2FWhirlyBirdieGX.ttf?v=1596681362011')  format('truetype');
+}
+
+:root {
+  --bg: var(--offwhite);
+  --text: black;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  font-family: "Whirly Birdie";
+  font-variation-settings: "wght" 70, "wdth" 100, "ital" 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 20vh;
+}
+
+
+@keyframes whirlyAnimate {
+  0%   { font-variation-settings: "anim" 100; }
+  100% { font-variation-settings: "anim" 200; }
+}
+
+.fontwindow {
+max-width: 1200px; 
+border: 1px solid gray;
+margin: auto;
+padding: 10px;
+box-sizing: border-box;
+}
+
+li::selection  { background: rgba(0, 0, 0, 0);; }
+li::-moz-selection { background: rgba(0, 0, 0, 0);; }
+
+p:focus {
+    outline:none;
+}
+
+a {
+    color: blue; text-decoration: none;
+}
+
+span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.ulist a {
+  color: inherit;
+}
+
+.ulist {
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  text-align: center;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  transition: left .1s;
+  border-bottom: 1px solid gray;
+}
+
+#autoswitch, #switch, #invert, #hide, #info, #show, #animate {
+    cursor: pointer;
+}
+
+
+.hideaway {
+  left: -655px;
+}
+
+.invert {
+  --bg: black;
+  --text: white;
+}
+
+.letters {
+  font-family: "Whirlybats";
+  font-weight: normal;
+  font-size: 65px;
+  margin: auto;
+  width: 75%;
+  letter-spacing: 20px;
+  padding-bottom: 50px;
+  /*letter-spacing: -3px;*/
+  font-feature-settings: "liga";
+  text-align: center;
+}
+
+pre {
+background-color: black;
+color: white;
+padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+#whirlybat {
+  font-size: 100px;
+  animation: whirlyAnimate 1s linear infinite;
+}
+
+.letters p {
+margin: 0;
+}
+
+.ease {
+  animation: animate 1s infinite;
+}
+
+
+p {
+  margin: none;
+}
+
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 10px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: var(--text);
+  border-radius: 0px;
+  border: 0px solid var(--text);
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 21px;
+  width: 15px;
+  border-radius: 14px;
+  background: var(--text);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--text);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: var(--text);
+  border-radius: 0px;
+}
+input[type=range]::-moz-range-thumb {
+  height: 21px;
+  width: 15px;
+  border-radius: 14px;
+  background: var(--text);
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: var(--text);
+  border-radius: 0px;
+}
+input[type=range]::-ms-fill-upper {
+  background: var(--text);
+  border-radius: 0px;
+}
+input[type=range]::-ms-thumb {
+  height: 21px;
+  width: 15px;
+  border-radius: 14px;
+  background: var(--text);
+  cursor: pointer;
+  height: 1px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: var(--text);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: var(--text);
+}
+
+  </style>
+<br>
+
+</body></html>
