@@ -25,6 +25,13 @@ echo "What's your github email?"
 read github_email
 git config user.email = $github_email
 
+## Node
+# gcc
+sudo apt install build-essential
+# Python3 
+# Install Node
+sudo snap install node --classic
+
 # Browsers - Google Chrome, Chromium, Brave
 # install google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -43,6 +50,7 @@ sudo snap install intellij-idea-community --classic
 
 
 ## TOOLS
+# CMake
 # Slack 
 sudo snap install slack --classic
 
@@ -74,6 +82,9 @@ sudo snap install telegram-desktop
 # Zoom
 sudo snap install zoom-client
 
+# Simple Screen Recorder
+sudo snap install simplescreenrecorder
+
 # Vim
 sudo apt search vim
 sudo apt install vim
@@ -81,9 +92,6 @@ sudo apt install vim
 # VLC
 sudo snap install vlc
 
-## Node
-# Install Node
-sudo snap install node --classic
 
 ## Fonts
 
