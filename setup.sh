@@ -22,11 +22,11 @@ sudo apt install git
 echo "Setting up github"
 echo "What's your github username?"
 read github_username
-git config user.name = $github_username
+git config user.name  $github_username
 
 echo "What's your github email?"
 read github_email
-git config user.email = $github_email
+git config user.email $github_email
 
 ## Node
 # Install NVM
@@ -35,9 +35,7 @@ sudo apt-get install nodejs
 # Yarn
 sudo apt remove cmdtest
 sudo apt autoremove
-sudo npm install -g yarn
 # To solve the error of: there are no scenarios (https://stackoverflow.com/questions/53471063/yarn-error-there-are-no-scenarios-must-have-at-least-one)
-sudo apt remove yarn -y
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install yarn
@@ -103,6 +101,7 @@ sudo snap install android-studio --classic
 # Android Devide Bridge
 sudo apt-get install android-tools-adb android-tools-fastboot
 sudo adb start-server
+
 ## TOOLS
 # CMake
 # Slack 
