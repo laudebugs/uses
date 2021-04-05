@@ -226,8 +226,8 @@ suru-plus-folders -C 90ssummer --theme Suru++
 sudo apt install gnome-tweak-tool -y
 # Grub Customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-sudo apt update -y
-sudo apt install grub-customizer -y
+sudo apt-get update -y
+sudo apt-get install grub-customizer -y
 # Dracula (https://draculatheme.com/gtk)
 wget -O dracula-theme.zip https://github.com/dracula/gtk/archive/master.zip
 unzip dracula-theme.zip -d dracula-theme
