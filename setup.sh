@@ -4,6 +4,8 @@
 do-release-upgrade -d
 cd 
 # Work from a setup folder
+sudo rsync -a backgrounds/ /usr/share/backgrounds/
+
 mkdir ~/setup
 cp -r fonts ~/setup/
 cd ~/setup
@@ -210,18 +212,18 @@ bash -c "$(wget -qO- https://git.io/vQgMr)"
 # cd "$HOME/src"
 # git clone https://github.com/Mayccoll/Gogh.git gogh
 # cd gogh/themes
-
 # necessary on ubuntu
-export TERMINAL=gnome-terminal
+# export TERMINAL=gnome-terminal
 
-# install themes
-./zenburn.sh
-./dracula.sh
-./sweet.sh
-./homebrew.sh
-./lavandula.sh
+# # install themes
+# ./zenburn.sh
+# ./dracula.sh
+# ./sweet.sh
+# ./homebrew.sh
+# ./lavandula.sh
 
 cd ~/setup/
+
 # SURU++ (https://github.com/gusbemacbe/suru-plus)
 wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | sh
 # SURU + Folders (https://gusbemacbe.github.io/suru-plus-folders/en/)
@@ -267,4 +269,4 @@ sudo apt-get install xserver-xorg-input-synaptics
 
 # Set favorite apps (https://askubuntu.com/questions/1193496/add-app-to-favorites-from-command-line)
 gsettings get org.gnome.shell favorite-apps
-['code_code.desktop','google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop']
+['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop', 'code_code.desktop']
