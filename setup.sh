@@ -46,6 +46,7 @@ sudo apt-get install g++ -y
 sudo apt install build-essential -y
 
 # Python3 
+sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update -y
 sudo apt-get install python3
 
@@ -258,3 +259,4 @@ sudo apt-get install xserver-xorg-input-synaptics
 
 # Set favorite apps (https://askubuntu.com/questions/1193496/add-app-to-favorites-from-command-line)
 gsettings set org.gnome.shell favorite-apps "['code.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'Lotion.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop']"
+
