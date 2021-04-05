@@ -4,8 +4,6 @@
 do-release-upgrade -d
 cd 
 # Work from a setup folder
-sudo rsync -a backgrounds/ /usr/share/backgrounds/
-
 mkdir ~/setup
 cp -r fonts ~/setup/
 cd ~/setup
@@ -195,10 +193,23 @@ sudo snap install deno
 
 
 ## Fonts
+wget https://github.com/lbugasu/uses/files/6258297/fonts.zip
+unzip fonts.zip
 sudo rsync -a fonts/* /usr/share/fonts/
 # Rebuild font cache
 fc-cache -f -v
 
+# Install IMB Plex (https://github.com/IBM/plex)
+wget -O ibm-plex.zip https://github.com/IBM/plex/releases/download/v5.1.3/TrueType.zip
+mkdir ibm-plex
+unzip ibm-plex.zip -d ibm-plex
+sudo mv ibm-plex/* /usr/share/fonts
+fc-cache -f -v
+
+## Backgrounds
+wget https://github.com/lbugasu/uses/files/6258296/backgrounds.zip
+unzip backgrounds.zip
+sudo rsync -a backgrounds/ /usr/share/backgrounds/
 
 ## CUSTOMIZATIONS
 # Terminal
@@ -268,5 +279,7 @@ sudo apt-get install xserver-xorg-input-synaptics
 # firebase login
 
 # Set favorite apps (https://askubuntu.com/questions/1193496/add-app-to-favorites-from-command-line)
-gsettings get org.gnome.shell favorite-apps
-['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop', 'code_code.desktop']
+gsettings get org.gnome.shell favorite-apps ['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop', 'code_code.desktop']
+
+cd 
+sudo rm -rf ~/setup
