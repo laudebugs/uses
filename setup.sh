@@ -1,9 +1,12 @@
 #!/bin/sh
 # run as root
 # sudo -i
+do-release-upgrade -d
 cd 
 # Work from a setup folder
-mkdir setup && cd setup
+mkdir ~/setup
+cp -r fonts ~/setup/
+cd ~/setup
 sudo apt-get update -y
 sudo apt upgrade -y
 sudo apt install wget -y
@@ -14,6 +17,9 @@ sudo apt install snapd
 
 # install curl
 sudo apt install curl
+
+# rsync
+sudo apt-get install rsync -y
 
 # Git
 echo Installing git...
@@ -94,7 +100,7 @@ curl -sL https://firebase.tools | bash
 # VS Code (https://code.visualstudio.com/docs/setup/linux)
 sudo snap install --classic code
 # IDEA
-sudo snap install intellij-idea-community --classic
+sudo snap install intellij-idea-educational --classic
 
 # Android Studio
 sudo snap install android-studio --classic
@@ -187,7 +193,7 @@ sudo snap install deno
 
 
 ## Fonts
-
+sudo rsync -a fonts/* /usr/share/fonts/
 # Rebuild font cache
 fc-cache -f -v
 
@@ -196,14 +202,14 @@ fc-cache -f -v
 # Terminal
 # Gogh (https://github.com/Mayccoll/Gogh)
 # Uncomment for interractive mode
-# sudo apt-get install dconf-cli uuid-runtime
-# bash -c "$(wget -qO- https://git.io/vQgMr)" 
+sudo apt-get install dconf-cli uuid-runtime
+bash -c "$(wget -qO- https://git.io/vQgMr)" 
 ## Non-interactive mode
 # clone the repo into "$HOME/src/gogh"
-mkdir -p "$HOME/src"
-cd "$HOME/src"
-git clone https://github.com/Mayccoll/Gogh.git gogh
-cd gogh/themes
+# mkdir -p "$HOME/src"
+# cd "$HOME/src"
+# git clone https://github.com/Mayccoll/Gogh.git gogh
+# cd gogh/themes
 
 # necessary on ubuntu
 export TERMINAL=gnome-terminal
@@ -232,7 +238,8 @@ sudo apt-get install grub-customizer -y
 wget -O dracula-theme.zip https://github.com/dracula/gtk/archive/master.zip
 unzip dracula-theme.zip -d dracula-theme
 mkdir Dracula 
-sudo mv dracula-theme/gtk-master/* Dracula/
+mv dracula-theme/gtk-master/* Dracula/
+sudo mv Dracula /usr/share/themes/
 # Ant Standard Buttons
 wget -O Ant-Nebula-Standard-Buttons.tar https://github.com/EliverLara/Ant-Nebula/releases/download/v1.3.0/Ant-Nebula-standard-buttons.tar
 mkdir Ant-standard-buttons
@@ -258,5 +265,5 @@ sudo apt-get install xserver-xorg-input-synaptics
 # firebase login
 
 # Set favorite apps (https://askubuntu.com/questions/1193496/add-app-to-favorites-from-command-line)
-gsettings set org.gnome.shell favorite-apps "['code.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'Lotion.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop']"
-
+gsettings get org.gnome.shell favorite-apps
+['code_code.desktop','google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop']
