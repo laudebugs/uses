@@ -38,12 +38,12 @@ sudo apt autoremove
 # To solve the error of: there are no scenarios (https://stackoverflow.com/questions/53471063/yarn-error-there-are-no-scenarios-must-have-at-least-one)
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update && sudo apt install yarn
+sudo apt update && sudo apt install yarn -y
 
 # g++ 
-sudo apt-get install g++
+sudo apt-get install g++ -y
 # gcc
-sudo apt install build-essential
+sudo apt install build-essential -y
 
 # Python3 
 sudo apt install software-properties-common
