@@ -1,7 +1,8 @@
 #!/bin/sh
 # run as root
 # sudo -i
-do-release-upgrade -d
+# Upgrade to the development branch? 
+# do-release-upgrade -d
 cd 
 # Work from a setup folder
 mkdir ~/setup && cd ~/setup
@@ -75,6 +76,9 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo snap install chromium
 # install Brave (https://brave.com/linux/)
 sudo snap install brave
+
+# TMUX
+sudo snap install tmux --classic # sudo apt install tmux -y
 
 ## COMMAND LINE INTERFACES
 # Heroku

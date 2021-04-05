@@ -8,7 +8,7 @@ VS Code ofc, but slowly picking up Vim
 
 ### Vim
 
-Adopting vim. Obtained original [.vimrc](./.vimrc) from Sean.
+Adopting vim. Obtained original [.vimrc](./.vimrc) from @Seankwon.
 
 ## Fonts
 
