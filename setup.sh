@@ -122,8 +122,14 @@ sudo snap install postman
 # Insomnia
 sudo snap install insomnia
 
+# Postgres
+sudo apt update -y
+sudo apt-get install posgresql-12 postgresql-contrib-12
+sudo apt-get install postgresql postgresql-contrib
+
 # MongoDB Community Edition
 sudo apt-get install gnupg
+sudo apt-get install libgconf-2-4
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 sudo apt-get update
@@ -143,10 +149,6 @@ sudo apt-get install -y mongodb-org
 # MongoDB Compass
 wget https://downloads.mongodb.com/compass/mongodb-compass_1.26.0_amd64.deb
 sudo dpkg -i mongodb-compass_1.26.0_amd64.deb
-
-# Postgres
-sudo apt update -y
-sudo apt install postgresql postgresql-contrib
 
 # ddrescue (https://www.tecmint.com/create-bootable-ubuntu-usb-disk/)
 sudo apt install gddrescue
