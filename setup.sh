@@ -22,11 +22,11 @@ sudo apt install git
 echo "Setting up github"
 echo "What's your github username?"
 read github_username
-git config user.name  $github_username
+git config --global user.name "$github_username"
 
 echo "What's your github email?"
 read github_email
-git config user.email $github_email
+git config --global user.email $github_email
 
 ## Node
 # Install NVM
