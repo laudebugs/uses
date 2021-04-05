@@ -46,8 +46,6 @@ sudo apt-get install g++ -y
 sudo apt install build-essential -y
 
 # Python3 
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update -y
 sudo apt-get install python3
 
@@ -58,7 +56,7 @@ sudo snap install node --classic
 bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
 
 # Java jre
-sudo apt-get install default-jre
+sudo apt-get install default-jre -y
 
 # Nautilus
 sudo apt-get update -y
@@ -88,6 +86,8 @@ unzip awscliv2.zip
 sudo ./aws/install
 # Emma (https://github.com/maticzav/emma-cli)
 sudo npm i -g emma-cli
+# Firebase
+curl -sL https://firebase.tools | bash
 
 ## Code Editors
 # VS Code (https://code.visualstudio.com/docs/setup/linux)
@@ -99,7 +99,7 @@ sudo snap install intellij-idea-community --classic
 sudo snap install android-studio --classic
 
 # Android Devide Bridge
-sudo apt-get install android-tools-adb android-tools-fastboot
+sudo apt-get install android-tools-adb android-tools-fastboot -y
 sudo adb start-server
 
 ## TOOLS
@@ -122,10 +122,26 @@ sudo snap install postman
 # Insomnia
 sudo snap install insomnia
 
-# MongoDB
+# MongoDB Community Edition
 sudo apt-get install gnupg
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl status mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
+
+# MongoDB CLI
+sudo apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo
+apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get update
+sudo apt-get install -y mongocli
+
+
 sudo apt-get update -y
 sudo apt-get install -y mongodb-org
 # MongoDB Compass
@@ -159,6 +175,13 @@ sudo snap install vlc
 
 # Unzip
 sudo apt install unzip
+
+# Epictask
+sudo snap install epictask
+
+# Deno
+sudo snap install deno
+
 
 ## Fonts
 
@@ -227,3 +250,9 @@ sudo apt install gnome-shell-extensions
 sudo apt install nvidia-driver-450
 # Synaptic
 sudo apt-get install xserver-xorg-input-synaptics
+
+# Log in to cli
+# firebase login
+
+# Set favorite apps (https://askubuntu.com/questions/1193496/add-app-to-favorites-from-command-line)
+gsettings set org.gnome.shell favorite-apps "['code.desktop', 'google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'Lotion.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop']"
