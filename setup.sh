@@ -129,9 +129,6 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
-sudo systemctl status mongod
-sudo systemctl stop mongod
-sudo systemctl restart mongod
 
 # MongoDB CLI
 sudo apt-get install gnupg
@@ -141,12 +138,15 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 sudo apt-get update
 sudo apt-get install -y mongocli
 
-
 sudo apt-get update -y
 sudo apt-get install -y mongodb-org
 # MongoDB Compass
 wget https://downloads.mongodb.com/compass/mongodb-compass_1.26.0_amd64.deb
 sudo dpkg -i mongodb-compass_1.26.0_amd64.deb
+
+# Postgres
+sudo apt update -y
+sudo apt install postgresql postgresql-contrib
 
 # ddrescue (https://www.tecmint.com/create-bootable-ubuntu-usb-disk/)
 sudo apt install gddrescue
