@@ -254,6 +254,7 @@ sudo mv Ant-Nebula /usr/share/themes/
 
 # Shell Extendions
 sudo apt install gnome-shell-extensions
+sudo apt install chrome-gnome-shell
 
 ## DRIVERS 
 # Nvidia 
