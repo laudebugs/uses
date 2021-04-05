@@ -279,7 +279,9 @@ sudo apt-get install xserver-xorg-input-synaptics
 # firebase login
 
 # Set favorite apps (https://askubuntu.com/questions/1193496/add-app-to-favorites-from-command-line)
-gsettings get org.gnome.shell favorite-apps ['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop', 'code_code.desktop']
+gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'code_code.desktop', 'chromium_chromium.desktop', 'spotify_spotify.desktop', 'slack_slack.desktop', 'org.gnome.Nautilus.desktop', 'intellij-idea-educational_intellij-idea-educational.desktop', 'notion-snap_notion-snap.desktop']"
 
+# rebuild font cache one more time
+fc-cache -f -v
 cd 
 sudo rm -rf ~/setup
