@@ -126,7 +126,7 @@ sudo snap install insomnia
 # Postgres
 sudo apt update -y
 sudo apt-get install posgresql-12 postgresql-contrib-12
-sudo apt-get install postgresql postgresql-contrib
+sudo apt-get install postgresql postgresql-contrib -y
 
 # MongoDB Community Edition
 sudo apt-get install gnupg
@@ -171,7 +171,7 @@ sudo snap install simplescreenrecorder
 
 # Vim
 sudo apt search vim
-sudo apt install vim
+sudo apt install vim -y
 
 # VLC
 sudo snap install vlc
@@ -250,7 +250,7 @@ sudo apt install gnome-shell-extensions
 
 ## DRIVERS 
 # Nvidia 
-sudo apt install nvidia-driver-450
+sudo apt install nvidia-driver-450 -y
 # Synaptic
 sudo apt-get install xserver-xorg-input-synaptics
 
