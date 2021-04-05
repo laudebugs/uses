@@ -4,9 +4,7 @@
 do-release-upgrade -d
 cd 
 # Work from a setup folder
-mkdir ~/setup
-cp -r fonts ~/setup/
-cd ~/setup
+mkdir ~/setup && cd ~/setup
 sudo apt-get update -y
 sudo apt upgrade -y
 sudo apt install wget -y
