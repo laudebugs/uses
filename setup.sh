@@ -219,7 +219,7 @@ sudo snap install deno
 
 
 ## Fonts
-wget https://github.com/lbugasu/uses/files/6258297/fonts.zip
+wget https://github.com/lbugasu/uses/releases/download/0.1.1/fonts.zip
 unzip fonts.zip
 sudo rsync -a fonts/* /usr/share/fonts/
 # Rebuild font cache
@@ -230,6 +230,13 @@ wget -O ibm-plex.zip https://github.com/IBM/plex/releases/download/v5.1.3/TrueTy
 mkdir ibm-plex
 unzip ibm-plex.zip -d ibm-plex
 sudo mv ibm-plex/* /usr/share/fonts
+fc-cache -f -v
+
+# Install Caskaydia Cove Nerd Font
+wget -O caskaydia-cove.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip
+mkdir caskaydia-cove
+unzip caskaydia-cove.zip -d askaydia-cove
+sudo mv caskaydia-cove/* /usr/share/fonts
 fc-cache -f -v
 
 ## Backgrounds
@@ -311,3 +318,7 @@ gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnom
 fc-cache -f -v
 cd 
 sudo rm -rf ~/setup
+
+## Developer tools
+# Dot Net
+sudo snap install dotnet-sdk --classic --channel=5.0
