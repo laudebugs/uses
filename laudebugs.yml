@@ -20,8 +20,12 @@
     ansible.builtin.git:
       repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
       dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
+  - name: Install the Zsh Syntax Highlighting
+    ansible.builtin.git:
+      repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+      dest: "~/.oh-my-zsh/plugins/zsh-syntaxhighlighting"
   - name: update our zshrc
-    shell: sed -i 's/(git/(git zsh-autosuggestions' ~/.zshrc
+    shell: sed -i 's/(git/(git zsh-autosuggestions zsh-syntaxhighlighting' ~/.zshrc
   - name: install node
     apt:
       name: ['node.js', 'npm']
@@ -32,5 +36,8 @@
     tags: 
     - node
   - name: n 14
+    shell: n 14
+    tags: 
+    - node
   
     
