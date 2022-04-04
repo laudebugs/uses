@@ -1,0 +1,5 @@
+
+- name: Install global npm packages.
+  community.general.npm:
+    global: yes
+    name: [ "@angular/cli", "firebase-tools"]

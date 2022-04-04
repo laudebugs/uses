@@ -15,4 +15,5 @@
   - include_tasks: tasks/node-setup.yml
   - include_tasks: tasks/apps-setup.yml
   - include_tasks: tasks/fonts-setup.yml
+  - include_tasks: ../common/npm-packages.yml
     
