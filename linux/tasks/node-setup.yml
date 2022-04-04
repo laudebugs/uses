@@ -1,0 +1,48 @@
+- name: Install nodejs, npm and yarn
+  become: true
+  apt:
+    name: ["nodejs", "npm", "yarn"]
+  tags:
+    - install
+    - node
+    - yarn
+
+- name: npmjs prefix
+  shell: mkdir -p ~/.local/.npm-global
+  tags:
+  - install
+  - node
+
+- name: add npmjs to path
+  shell: PATH=~/.local/.npm-global/bin:$PATH
+  tags:
+  - install
+  - node
+
+- name: Install NVM
+  become: true
+  shell: |
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    source ~/.nvm/nvm.sh
+    source ~/.bashrc
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    nvm install 16
+    nvm use 16
+    nvm install 14
+  tags:
+    - install
+    - nvm
+
+- name: Install Yarn
+  become: true
+  shell: |
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+    apt-get update
+    apt install yarn -y
+  tags:
+    - install
+    - node
+    - yarn

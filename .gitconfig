@@ -1,8 +1,0 @@
-[user]
-	name = lbugasu
-	email = lbugasu@gmail.com
-[alias]
-	uncommit = reset --soft HEAD~1
-	push-origin = !git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\"
-[core]
-	editor = code --wait

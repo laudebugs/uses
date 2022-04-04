@@ -179,6 +179,7 @@ sudo apt-get install -y mongocli
 
 sudo apt-get update -y
 sudo apt-get install -y mongodb-org
+
 # MongoDB Compass
 wget https://downloads.mongodb.com/compass/mongodb-compass_1.26.0_amd64.deb
 sudo dpkg -i mongodb-compass_1.26.0_amd64.deb

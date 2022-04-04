@@ -1,0 +1,31 @@
+- name: Git personal setup email
+  git_config:
+    name: user.email
+    scope: global
+    value: "lbugasu@gmail.com"
+  tags:
+  - git-config
+
+- name: Git personal setup name
+  git_config:
+    name: user.name
+    scope: global
+    value: "lbugasu"
+  tags:
+  - git-config
+
+- name: Uncomit changes shortcut
+  git_config:
+    name: alias.uncommig
+    scope: global
+    value: "reset --soft HEAD~1"
+  tags:
+  - git-config
+
+- name: Push to origin shortcut
+  git_config:
+    name: alias.uncommig
+    scope: global
+    value: "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  tags:
+  - git-config

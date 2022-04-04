@@ -1,0 +1,113 @@
+- name: kdenlive ppa (ppa:kdenlive/kdenlive-stable)
+  become: true
+  apt_repository:
+   repo: ppa:kdenlive/kdenlive-stable
+   state: present
+   update_cache: True
+  tags:
+    - install
+    - productivity
+
+- name: shutter ppa (ppa:linuxuprising/shutter)
+  become: true
+  apt_repository:
+   repo: ppa:linuxuprising/shutter
+   state: present
+   update_cache: True
+  tags:
+    - install
+    - productivity
+
+- name: Install packages
+  become: true
+  apt:
+    update_cache: True
+    name: 
+      - gddrescue
+      - tmux
+      - unzip
+      - vim
+
+- name: Install More packages
+  become: true
+  apt: 
+    force_apt_get: true
+    name: 
+      - android-tools-adb
+      - android-tools-fastboot
+      - default-jre
+      - grub-customizer
+      - nautilus
+
+- name: Postgresql Setup
+  become: true
+  apt:
+    force_apt_get: true
+    name:
+      - postgresql-12
+      - postgresql-contrib-12
+
+# https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+- name: MongoDB Setup
+  become: True
+  shell: |
+      wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
+      echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+      apt-get update
+      apt-get install -y mongodb-org
+
+- name: Install MongoDB CLI
+  become: true
+  shell: |
+    wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc |
+    apt-key add -
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+  tags:
+    - setup
+    - mongodb cli
+
+# - name: Install MongoDB Compass
+#   become: true
+#   shell: |
+#     wget https://downloads.mongodb.com/compass/mongodb-compass_1.31.0_amd64.deb
+#     dpkg -i mongodb-compass_1.31.0_amd64.deb
+
+- name: Install Apps from Snap Store
+  become: true
+  community.general.snap:
+    name:
+      - brave
+      - chromium
+      - deno
+      - discord
+      - epictask
+      - insomnia
+      - postman
+      - redis
+      - signal-desktop
+      - simplescreenrecorder
+      - spotify
+      - telegram-desktop
+      - unzip
+      - vlc
+      - zoom-client
+  tags: 
+    - install
+    - productivity
+
+- name: Install More Apps from Snap Store (classic)
+  become: true
+  community.general.snap:
+    name:
+      - android-studio
+      - blender
+      - code
+      - dotnet-sdk
+      - heroku
+      - intellij-idea-educational
+      - slack
+      - tmux
+    classic: true
+  tags: 
+    - install
+    - productivity

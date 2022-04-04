@@ -1,0 +1,37 @@
+- name: Install ZSH
+  apt: name=zsh
+  tags: &tags_for_zsh_tasks [ 'install', 'productivity', 'dotfiles', 'zsh' ]
+    
+- name: Change shell to zsh
+  shell: chsh -s $(which zsh)
+  tags: *tags_for_zsh_tasks
+
+- name: Check that the somefile.conf exists
+  stat:
+    path: ~/.oh-my-zsh
+  register: oh_my_stats
+  tags: *tags_for_zsh_tasks
+
+- name: Oh-My-Zsh
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
+  tags: *tags_for_zsh_tasks
+  when: oh_my_stats.stat.exists == False
+  become: yes
+
+- name: Install zsh-autosuggestions
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
+  tags: *tags_for_zsh_tasks
+
+- name: Install the Zsh Syntax Highlighting
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+    dest: "~/.oh-my-zsh/plugins/zsh-syntaxhighlighting"
+  tags: *tags_for_zsh_tasks
+
+- name: Install 256 Color plugin
+  ansible.builtin.git:
+    repo: 'https://github.com/chrissicool/zsh-256color.git'
+    dest: "~/.oh-my-zsh/plugins/zsh-256color"
+  tags: *tags_for_zsh_tasks

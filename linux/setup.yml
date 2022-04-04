@@ -1,0 +1,17 @@
+- hosts: localhost
+  become: true
+  pre_tasks: 
+    - name: Update Cache
+      apt: 
+        force_apt_get: true
+        update_cache: true
+      tags: 
+      - setup
+      - core
+  tasks:  
+  - include_tasks: tasks/git-setup.yml
+  - include_tasks: tasks/core-setup.yml
+  # - include_tasks: tasks/zsh-setup.yml
+  # - include_tasks: tasks/node-setup.yml
+  - include_tasks: tasks/apps-setup.yml
+    

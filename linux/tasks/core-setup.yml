@@ -1,0 +1,21 @@
+- name: Setup SSH
+  become: true
+  apt:
+    force_apt_get: true
+    name: 
+      - openssh-server
+
+- name: Core Libs
+  become: true
+  apt: 
+    force_apt_get: true
+    name: 
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - g++
+      - gnupg
+      - libgconf-2-4
+      - lsb-release
+      - snapd
+      - wget
