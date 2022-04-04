@@ -1,0 +1,4 @@
+- name: Copy fonts to fonts Dir
+  shell: |
+    find assets/fonts/truetype/ -mindepth 2 -type f -exec cp -i '{}' ~/Library/Fonts/ ';'
+    find assets/fonts/opentype/ -mindepth 2 -type f -exec cp -i '{}' ~/Library/Fonts/ ';'

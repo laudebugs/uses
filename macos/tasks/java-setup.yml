@@ -1,0 +1,20 @@
+# Using Jenv on MacOS
+# https://github.com/jenv/jenv
+
+- name: Install jenv
+  community.general.homebrew:
+    name: jenv
+
+- name: Configure Java export plugin
+  shell: | 
+    jenv enable-plugin export
+    exec $SHELL -l
+
+- name: Install Java 11
+  community.general.homebrew:
+    name: 
+      - adoptopenjdk/openjdk/adoptopenjdk11 # opanjdk11
+
+- name: add java 11 to jenv
+  shell: |
+    jenv add Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/

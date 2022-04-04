@@ -7,5 +7,5 @@ RUN apt update && \
     apt-add-repository -y ppa:ansible/ansible && \
     apt update && \
     apt install -y curl git ansible build-essential
-COPY . .
+COPY .. .
 CMD ["sh", "-c", "ansible-playbook $TAGS setup.yml"]

@@ -1,0 +1,15 @@
+- name: Install Android Studio & Platform Tools
+  community.general.homebrew:
+    name: 
+     - homebrew/cask/android-sdk
+     - android-platform-tools
+
+- name: Start ADB Services
+  shell: |
+    adb start-server
+
+
+- name: Install VS Code
+  community.general.homebrew_cask:
+    name: 
+      - visual-studio-code

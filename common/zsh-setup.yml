@@ -1,4 +1,5 @@
-- name: Install ZSH
+- name: Install ZSH on Linux (Ubuntu) 🐧
+  when: (ansible_facts['distribution'] == "Ubuntu")
   apt: name=zsh
   tags: &tags_for_zsh_tasks [ 'install', 'productivity', 'dotfiles', 'zsh' ]
     

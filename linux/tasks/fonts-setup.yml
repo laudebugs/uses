@@ -1,0 +1,19 @@
+- name: Install fonts
+  shell: |
+    sudo rsync -a ../fonts/* /usr/share/fonts/
+    # Rebuild font cache
+    fc-cache -f -v
+
+    # Install IMB Plex (https://github.com/IBM/plex)
+    wget -O ibm-plex.zip https://github.com/IBM/plex/releases/download/v5.1.3/TrueType.zip
+    mkdir ibm-plex
+    unzip ibm-plex.zip -d ibm-plex
+    sudo mv ibm-plex/* /usr/share/fonts
+    fc-cache -f -v
+
+    # Install Caskaydia Cove Nerd Font
+    wget -O caskaydia-cove.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip
+    mkdir caskaydia-cove
+    unzip caskaydia-cove.zip -d askaydia-cove
+    sudo mv caskaydia-cove/* /usr/share/fonts
+    fc-cache -f -v

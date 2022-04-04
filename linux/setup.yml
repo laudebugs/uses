@@ -9,9 +9,10 @@
       - setup
       - core
   tasks:  
-  - include_tasks: tasks/git-setup.yml
+  - include_tasks: ../common/git-setup.yml
+  - include_tasks: ../common/zsh-setup.yml
   - include_tasks: tasks/core-setup.yml
-  # - include_tasks: tasks/zsh-setup.yml
-  # - include_tasks: tasks/node-setup.yml
+  - include_tasks: tasks/node-setup.yml
   - include_tasks: tasks/apps-setup.yml
+  - include_tasks: tasks/fonts-setup.yml
     
