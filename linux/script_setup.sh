@@ -53,7 +53,7 @@ sudo apt install build-essential -y
 # Python3 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update -y
-sudo apt-get install python3
+sudo apt-get install python3.6.15
 
 # Install Node
 sudo snap install node --classic
