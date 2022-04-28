@@ -152,6 +152,9 @@ sudo snap install spotify
 # Postman
 sudo snap install postman
 
+# Altair
+sudo snap install altair
+
 # Insomnia
 sudo snap install insomnia
 

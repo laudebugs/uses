@@ -76,6 +76,7 @@
   become: true
   community.general.snap:
     name:
+      - altair
       - brave
       - chromium
       - deno
