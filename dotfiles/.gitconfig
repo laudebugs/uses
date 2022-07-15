@@ -1,5 +1,5 @@
 [user]
-	name = lbugasu
+	name = laudebugs
 	email = lbugasu@gmail.com
 [alias]
 	uncommit = reset --soft HEAD~1
