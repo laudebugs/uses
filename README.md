@@ -6,12 +6,12 @@ To set up a new device:
 ### Linux 🐧 (90% there)
 ```bash
 apt install curl
-curl https://raw.githubusercontent.com/lbugasu/uses/master/linux/setup.sh | bash
+curl https://raw.githubusercontent.com/laudebugs/uses/master/linux/setup.sh | bash
 ```
 
 ### MacOS 🖥 (Work in Progress)
 ```bash
-curl https://raw.githubusercontent.com/lbugasu/uses/master/macos/setup.sh | bash
+curl https://raw.githubusercontent.com/laudebugs/uses/master/macos/setup.sh | bash
 ```
 
 
