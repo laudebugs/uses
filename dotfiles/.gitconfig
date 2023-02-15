@@ -1,8 +1,10 @@
 [user]
 	name = laudebugs
-	email = lbugasu@gmail.com
+	email = laudebugs@gmail.com
 [alias]
 	uncommit = reset --soft HEAD~1
 	push-origin = !git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\"
+	ac = !git add -A && git commit -m
+	add-string =  "!sh -c \"git diff -G '$1' --name-only | xargs git add\" -"
 [core]
 	editor = code --wait
