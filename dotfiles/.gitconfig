@@ -6,5 +6,6 @@
 	push-origin = !git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\"
 	ac = !git add -A && git commit -m
 	add-string =  "!sh -c \"git diff -G '$1' --name-only | xargs git add\" -"
+	last-checked = !git reflog | grep -i 'checkout: moving' | head -n
 [core]
 	editor = code --wait
