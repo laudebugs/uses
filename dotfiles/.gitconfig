@@ -15,10 +15,6 @@
 	fetch-all = "!git for-each-ref --format='%(refname:short)' refs/heads/ | while read branch; do git fetch origin $branch:$branch; done"
 	# List the last n checked out branches in a git repository
 	last-checked = !git reflog | grep -i 'checkout: moving' | head -n
-	# This git alias takes two commands, the first being the new branch name, the second being the base branch
-	# The new worktree will be located at the path that matches the branch name and based on the base branch
-	# Git Worktree Documentation: https://git-scm.com/docs/git-worktree
-	wa = "!sh -c \"git worktree add --track -b '$1' '$1' '$2'\" -"
 	# lists the "parent" branch for a given branch
 	# Source: https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch
 	parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
@@ -26,6 +22,10 @@
 	push-origin = !git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\"
 	# This resets the last commit made
 	uncommit = reset --soft HEAD~1
+	# This git alias takes two commands, the first being the new branch name, the second being the base branch
+	# The new worktree will be located at the path that matches the branch name and based on the base branch
+	# Git Worktree Documentation: https://git-scm.com/docs/git-worktree
+	wa = "!sh -c \"git worktree add --track -b '$1' '$1' '$2'\" -"
 [core]
 	editor = code --wait
 [credential]
