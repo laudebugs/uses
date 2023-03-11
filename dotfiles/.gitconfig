@@ -18,7 +18,7 @@
 	# This git alias takes two commands, the first being the new branch name, the second being the base branch
 	# The new worktree will be located at the path that matches the branch name and based on the base branch
 	# Git Worktree Documentation: https://git-scm.com/docs/git-worktree
-	new-tree = "!sh -c \"git worktree add --track -b '$1' '$1' '$2'\" -"
+	wa = "!sh -c \"git worktree add --track -b '$1' '$1' '$2'\" -"
 	# lists the "parent" branch for a given branch
 	# Source: https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch
 	parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
