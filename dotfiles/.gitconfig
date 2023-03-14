@@ -30,3 +30,7 @@
 	editor = code --wait
 [credential]
 	helper = store
+[checkout]
+	defaultRemote = origin
+[push]
+	autoSetupRemote = true
