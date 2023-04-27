@@ -15,7 +15,7 @@
 	fetch-all = "!git for-each-ref --format='%(refname:short)' refs/heads/ | while read branch; do git fetch origin $branch:$branch; done"
 	# List the last n checked out branches in a git repository
 	last-checked = !git reflog | grep -i 'checkout: moving' | head -n
-	# lists the 'parent' branch for a given branch
+	# lists the "parent" branch for a given branch
 	# Source: https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch
 	parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
 	# Sets up the upstream and pushes the local branch to the remote origin
@@ -25,12 +25,22 @@
 	# This git alias takes two commands, the first being the new branch name, the second being the base branch
 	# The new worktree will be located at the path that matches the branch name and based on the base branch
 	# Git Worktree Documentation: https://git-scm.com/docs/git-worktree
-	wa = "!sh -c \"git worktree add --track -b '$1' '$1' '$2'\" -"
+	# The Command `git rev-parse --git-common-dir ensures that worktree paths are always generated from the root of the bare repo
+	wa = "!sh -c \"cd $(git rev-parse --git-common-dir) && git worktree add --no-track -b '$1' '$1' '$2'\" -"
+	# Adds all the files in the current directory and commits with the provided commit message
+	adc = !git add -A && git commit -S -m
+	# checkout a new branch
+	cb = checkout -b
 [core]
 	editor = code --wait
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
 [credential]
 	helper = store
 [checkout]
 	defaultRemote = origin
 [push]
 	autoSetupRemote = true
+
