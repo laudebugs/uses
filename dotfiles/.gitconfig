@@ -2,7 +2,7 @@
 	name = laudebugs
 	email = laudebugs@gmail.com
 [alias]
-	# Pass in a commit Message, This will stage ALL the changed files and commit with the provided commit message
+	# Pass in a commit Message, This will stage ALL the changed files and commit with the provided commit message and sign the commit (-S)
 	ac = !git add -A && git commit -S -m
 	# Filter changed files based on a string and ONLY stage files that contain that substring in the diff
 	add-string =  "!sh -c \"git diff -G '$1' --name-only | xargs git add\" -"
