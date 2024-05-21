@@ -31,6 +31,13 @@
 	adc = !git add -A && git commit -S -m
 	# checkout a new branch
 	cb = checkout -b
+	adc = !git add -A :!pnpm-lock.yaml && git commit -S -m
+	# checkout a new branch
+	cb = checkout -b
+	# Cherry Pick shortcut
+	cp = cherry-pick
+	# List the worktrees
+	wl = worktree list
 [core]
 	editor = code --wait
 [commit]
