@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/laudebugs/.oh-my-zsh"
+export GPG_TTY="/dev/ttys002"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
@@ -110,6 +112,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_NDK=/Users/username/Library/Android/sdk/ndk-bundle
+export CLASSPATH=$CLASSPATH:/Users/laudebugs/github/core-nlp-research/stanford-corenlp-4.4.0/*:
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -121,3 +125,57 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
+
+export PATH=$PATH:/Users/laudebugs/Library/Python/3.9/bin
+
+
+export PNPM_HOME="/Users/laudebugs/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
+
+# PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+# PATH="$PATH:$PYTHON_BIN_PATH"
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/laudebugs/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/laudebugs/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/laudebugs/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/laudebugs/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/laudebugs/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/laudebugs/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/laudebugs/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/laudebugs/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# pnpm
+export PNPM_HOME="/Users/laudebugs/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+alias pn=pnpm
+alias dc=docker-compose
+alias ytdl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4'
+
+# Tauri development team id
+export TAURI_APPLE_DEVELOPMENT_TEAM=35KBR7UHPZ
