@@ -1,8 +1,7 @@
 [user]
-	name = laudebugs
-	email = laudebugs@gmail.com
+	name = Laurence Ininda
 [alias]
-	# Pass in a commit Message, This will stage ALL the changed files and commit with the provided commit message and sign the commit (-S)
+	# Pass in a commit Message, This will stage ALL the changed files and commit with the provided commit message
 	ac = !git add -A && git commit -S -m
 	# Filter changed files based on a string and ONLY stage files that contain that substring in the diff
 	add-string =  "!sh -c \"git diff -G '$1' --name-only | xargs git add\" -"
@@ -31,7 +30,6 @@
 	adc = !git add -A && git commit -S -m
 	# checkout a new branch
 	cb = checkout -b
-	adc = !git add -A :!pnpm-lock.yaml && git commit -S -m
 	# checkout a new branch
 	cb = checkout -b
 	# Cherry Pick shortcut
@@ -43,11 +41,22 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 [credential]
 	helper = store
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [checkout]
 	defaultRemote = origin
 [push]
 	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
+[init]
+	defaultBranch = main
+[credential "https://dev.azure.com"]
+	useHttpPath = true
