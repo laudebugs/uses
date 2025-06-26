@@ -31,23 +31,34 @@
 	adc = !git add -A && git commit -S -m
 	# checkout a new branch
 	cb = checkout -b
-	adc = !git add -A :!pnpm-lock.yaml && git commit -S -m
 	# checkout a new branch
 	cb = checkout -b
 	# Cherry Pick shortcut
 	cp = cherry-pick
 	# List the worktrees
 	wl = worktree list
+	# switch git user
+	home = !git config --global user.email laudebugs@gmail.com && git config --global user.signingkey <FILL IN>
 [core]
 	editor = code --wait
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 [credential]
 	helper = store
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [checkout]
 	defaultRemote = origin
 [push]
 	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
+[init]
+	defaultBranch = main
+[branch]
+	sort = committerdate

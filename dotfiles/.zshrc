@@ -173,9 +173,23 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export GPG_TTY=$(tty)
+
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
+
+# add dotnet tools to path
+export DOTNET_8_PATH="/usr/local/share/dotnet/dotnet"
+
+export PATH=$PATH:$DOTNET_8_PATH
+
 alias pn=pnpm
 alias dc=docker-compose
 alias ytdl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4'
 
 # Tauri development team id
 export TAURI_APPLE_DEVELOPMENT_TEAM=35KBR7UHPZ
+export EDITOR="code"

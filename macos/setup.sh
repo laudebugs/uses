@@ -21,6 +21,7 @@ source ~/.zprofile
 
 ## install git
 brew install git
+brew install gnupg
 
 git clone https://github.com/lbugasu/uses.git && cd uses
 
