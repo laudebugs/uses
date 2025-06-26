@@ -44,6 +44,8 @@
 [commit]
 	gpgsign = true
 [gpg]
+	# If installing gpg from the binary, most likely the path will be /usr/local/bin/gpg
+	# to find out the correct path, run `which gpg` in the terminal
 	program = /opt/homebrew/bin/gpg
 [credential]
 	helper = store
