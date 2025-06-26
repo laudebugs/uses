@@ -22,7 +22,7 @@ source ~/.zprofile
 ## install git
 brew install git
 brew install gnupg
-
+brew install --cask git-credential-manager
 git clone https://github.com/lbugasu/uses.git && cd uses
 
 ansible-playbook macos/setup.yml
